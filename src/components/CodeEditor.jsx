@@ -1,22 +1,23 @@
 import Editor from '@monaco-editor/react';
 import { useRecoilState } from 'recoil'
 import { RuntimeState } from '../states/atoms/runtimeState';
+import { CodeContent } from '../states/atoms/codeContent';
 
 export default function CodeEditor() {
 
     const [runtime] = useRecoilState(RuntimeState);
-    console.log(runtime.name);
-    function handleEditorChange(value, event) {
-      console.log('here is the current model value:', value);
-    }
+    const [codeText, setCodeText] = useRecoilState(CodeContent);
+    // console.log(runtime.name);
+    console.log(codeText);
+    
 
     return (
     <Editor
       height="90vh"
       theme='vs-dark'
+      value= {codeText}
       language={runtime.name}
-      defaultValue=""
-      onChange={handleEditorChange}
+      onChange={e => setCodeText(e)}    
     />
     );
 }
