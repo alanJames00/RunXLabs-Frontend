@@ -5,7 +5,7 @@ import { RuntimeState } from '../states/atoms/runtimeState';
 export default function CodeEditor() {
 
     const [runtime] = useRecoilState(RuntimeState);
-
+    console.log(runtime.name);
     function handleEditorChange(value, event) {
       console.log('here is the current model value:', value);
     }
