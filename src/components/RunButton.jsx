@@ -14,6 +14,8 @@ export default function RunButton() {
     const [output, setOutput] = useRecoilState(OutputState);
     const [isRunning, setRunning] = useState(false);
 
+    const langVers = [{val:'js' ,ver:'18.15.0'}, {val:'py',ver:'3.10.0'}, {val:'c', ver: '10.2.0'}]
+
     async function handleCodeRun() {
         
         // Disable run btn
@@ -24,7 +26,7 @@ export default function RunButton() {
         const reqBody = {
 
                 language: runtime.val,
-                version: "18.15.0",
+                version: (langVers.find(opt => opt.val == runtime.val)).ver,
                 files: [
                     {
                         name: `my_cool_code.${runtime.val}`,
