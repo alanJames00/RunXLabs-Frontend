@@ -16,6 +16,7 @@ export default function CodeEditor() {
     return (
     <Editor
       height="90vh"
+      className=' border-blue-400 border-4'
       theme={currTheme.val}
       value= {codeText}
       language={runtime.name}
