@@ -57,6 +57,9 @@ export default function RunButton() {
             // error in code exec
             setOutput(respJson.run.stderr);
         }
+        else if(respJson.run.signal == "SIGKILL") {
+            setOutput(`Time Limit Exceeded: SIGKILL \n ${respJson.run.stdout}`)
+        }   
 
         console.log(respJson);
         // set the btn back to enabled
