@@ -28,7 +28,7 @@ export default function RunButton() {
                 files: [
                     {
                         name: `my_cool_code.${runtime.val}`,
-                        content: "console.log('myjs')\nconsole.log('helloWorld')"
+                        content: codeText,
                     }
                 ],
                 stdin: "",
