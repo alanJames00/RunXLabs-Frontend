@@ -14,7 +14,7 @@ export default function RunButton() {
     const [output, setOutput] = useRecoilState(OutputState);
     const [isRunning, setRunning] = useState(false);
 
-    const langVers = [{val:'js' ,ver:'18.15.0'}, {val:'py',ver:'3.10.0'}, {val:'c', ver: '10.2.0'}, {val:'rs',ver:'1.68.2'}]
+    const langVers = [{val:'js' ,ver:'18.15.0'}, {val:'py',ver:'3.10.0'}, {val:'c', ver: '10.2.0'}, {val:'rs',ver:'1.68.2'}, {val:'java', ver:'15.0.2'}]
 
     async function handleCodeRun() {
         
