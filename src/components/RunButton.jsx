@@ -20,7 +20,8 @@ export default function RunButton() {
         
         // Disable run btn
         setRunning(true);
-        
+        setOutput('Running...')
+
         try {
 
         const reqBody = {
@@ -29,7 +30,7 @@ export default function RunButton() {
                 version: (langVers.find(opt => opt.val == runtime.val)).ver,
                 files: [
                     {
-                        name: `my_cool_code.${runtime.val}`,
+                        name: `sample_code.${runtime.val}`,
                         content: codeText,
                     }
                 ],
@@ -58,11 +59,15 @@ export default function RunButton() {
         }
 
         console.log(respJson);
+        // set the btn back to enabled
+        setRunning(false);
 
     }
 
     catch(e) {
+        setOutput('Error In Connecting To Server. Check Your Internet Connection and Try Again');
         console.log(e);
+        setRunning(false);
     }
 
     }
