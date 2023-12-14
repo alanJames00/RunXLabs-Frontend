@@ -2,6 +2,12 @@
 
 **runxlabs** is an open-source web application that serves as a universal code runner. It allows users to execute code snippets in various programming languages directly in their web browser.
 
+## Production URL
+***Website***: https://runxlabs.netlify.app/
+
+Deployment Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/f4fa96a9-43bd-4043-9f8f-e903ccb69fbf/deploy-status)](https://app.netlify.com/sites/runxlabs/deploys)
+
+
 ## Features
 
 - **Multi-language Support:** Execute code in multiple programming languages.
