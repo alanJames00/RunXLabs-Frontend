@@ -1,5 +1,6 @@
 import { useRecoilState  } from "recoil";
 import { OutputState } from "../states/atoms/outputState";
+import { ThemeState } from "../states/atoms/ThemeState";
 
 export default function OutputTerminal() {
 
