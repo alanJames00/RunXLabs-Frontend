@@ -9,7 +9,7 @@ export default function RuntimeDropdown() {
     
 
     const [runtime, setRuntime] = useRecoilState(RuntimeState);
-    const langArray = [ {name:'javascript', val:'js'}, {name:'python',val:'py'}, {name:'c',val:'c'} , {name:'rust', val:'rs'}]
+    const langArray = [ {name:'javascript', val:'js'}, {name:'python',val:'py'}, {name:'c',val:'c'} , {name:'rust', val:'rs'}, {name:'java' ,val:'java'}]
     console.log(runtime);
 
     return (
