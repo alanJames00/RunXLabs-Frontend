@@ -35,11 +35,16 @@ export default function SideBar() {
 
     useEffect(()=>{
 
-        // fetch last used language
+        // check if last used lang exists 
         const currentLang: any = localStorage.getItem("currentLang");
-        // parse into json
-        const currLangJson = JSON.parse(currentLang);
-        setLang(currLangJson)
+
+        if(currentLang != null) {
+
+            // fetch last used language
+            // parse into json
+            const currLangJson = JSON.parse(currentLang);
+            setLang(currLangJson)
+        }
 
     }, [])
 
