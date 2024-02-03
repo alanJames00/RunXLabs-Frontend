@@ -15,7 +15,7 @@ import {
   } from "@/components/ui/dropdown-menu";
 import { codeLang } from "@/app/states/codeLang";
 import { codeResult } from "../states/codeResult";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function SideBar() {
 
@@ -28,11 +28,20 @@ export default function SideBar() {
     // Component States
     const[isRunning, setRunning] = useState(false);
 
-    const langArray = [ {name:'javascript', val:'js'}, {name:'python',val:'py'}, {name:'c',val:'c'} , {name:'rust', val:'rs'}, {name:'java' ,val:'java'}]
+    const langArray = [ {name:'javascript', val:'js', pName: 'Javascript'}, {name:'python',val:'py', pName: 'Python'}, {name:'c',val:'c', pName: 'C/C++'} , {name:'rust', val:'rs', pName: 'Rust'}, {name:'java' ,val:'java', pName: 'Java'}]
 
     // Required for piston-RCE
     const langVers = [{val:'js' ,ver:'18.15.0'}, {val:'py',ver:'3.10.0'}, {val:'c', ver: '10.2.0'}, {val:'rs',ver:'1.68.2'}, {val:'java', ver:'15.0.2'}]
 
+    useEffect(()=>{
+
+        // fetch last used language
+        const currentLang: any = localStorage.getItem("currentLang");
+        // parse into json
+        const currLangJson = JSON.parse(currentLang);
+        setLang(currLangJson)
+
+    }, [])
 
     async function handleCodeRun() {
        
@@ -109,6 +118,11 @@ export default function SideBar() {
                 <DropdownMenuRadioGroup value={lang.name} onValueChange={(e) => {
                     const a = langArray.find((elem) => elem.name == e );
                     console.log(a);
+
+                    // sync language change to localStorage
+                    // convert stringify a
+                    const currentLang = JSON.stringify(a);
+                    localStorage.setItem("currentLang", currentLang);
                     setLang(a);
                 } }>
                     {
