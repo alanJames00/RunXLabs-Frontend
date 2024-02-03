@@ -1,4 +1,5 @@
 import Editor from '@monaco-editor/react';
+import React from 'react';
 
 export default function CodeEditor({ value, onChange, lang} : { value:string, onChange: any, lang: string}) {
 

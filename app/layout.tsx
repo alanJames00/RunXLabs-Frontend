@@ -1,26 +1,23 @@
-import type { Metadata } from "next";
+"use client"
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { RecoilRoot } from 'recoil';
+import { RecoilRoot } from "recoil";
 
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "runXlabs",
-  description: "Open source universal code runner for everyone",
-};
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <RecoilRoot>
-        <body className={inter.className}>{children}</body>
-      </RecoilRoot>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<title>runXlabs</title>
+				<RecoilRoot>
+				<body className={inter.className}>{children}</body>
+				</RecoilRoot>
+		</html>
+	);
 }
