@@ -28,10 +28,10 @@ export default function SideBar() {
     // Component States
     const[isRunning, setRunning] = useState(false);
 
-    const langArray = [ {name:'javascript', val:'js', pName: 'Javascript'}, {name:'python',val:'py', pName: 'Python'}, {name:'c',val:'c', pName: 'C/C++'} , {name:'rust', val:'rs', pName: 'Rust'}, {name:'java' ,val:'java', pName: 'Java'}]
+    const langArray = [ {name:'javascript', val:'js', pName: 'Javascript'}, {name:'python',val:'py', pName: 'Python'}, {name:'c',val:'c', pName: 'C/C++'} , {name:'rust', val:'rs', pName: 'Rust'}, {name:'java' ,val:'java', pName: 'Java'}, {name: "go", val: "go"}]
 
     // Required for piston-RCE
-    const langVers = [{val:'js' ,ver:'18.15.0'}, {val:'py',ver:'3.10.0'}, {val:'c', ver: '10.2.0'}, {val:'rs',ver:'1.68.2'}, {val:'java', ver:'15.0.2'}]
+    const langVers = [{val:'js' ,ver:'18.15.0'}, {val:'py',ver:'3.10.0'}, {val:'c', ver: '10.2.0'}, {val:'rs',ver:'1.68.2'}, {val:'java', ver:'15.0.2'}, {val:"go", ver:"1.16.2"}]
 
     useEffect(()=>{
 
